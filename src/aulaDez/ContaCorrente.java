@@ -5,10 +5,13 @@ public class ContaCorrente {
 	String identificador;
 	float saldo;
 	float limite;
+	String senha;
 
-	ContaCorrente(String titular, String identificador, float limite){
+	ContaCorrente(String titular, String identificador, String senha,
+								float limite){
 		this.identificador = identificador;
 		this.titular = titular;
+		this.senha = senha;
 		this.limite = limite;
 	}
 

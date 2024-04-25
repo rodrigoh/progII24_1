@@ -4,19 +4,13 @@ public class ContaPoupanca {
 	String titular;
 	String identificador;
 	float saldo;
+	String senha;
 
-	ContaPoupanca(){
-
-	}
-
-	ContaPoupanca(String identificador, float saldo){
-		this.identificador = identificador;
-		this.saldo = saldo;
-	}
-
-	ContaPoupanca(String titular, String identificador, float saldo){
+	ContaPoupanca(String titular, String identificador, String senha,
+								float saldo){
 		this.titular = titular;
 		this.identificador = identificador;
+		this.senha = senha;
 		this.saldo = saldo;
 	}
 

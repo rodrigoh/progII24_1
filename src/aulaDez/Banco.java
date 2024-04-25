@@ -11,9 +11,11 @@ public class Banco {
 		System.out.print("Qual o nome do titular: ");
 		String titular = ler.next();
 		String identificador = "a"+aleatorio.nextInt(10000);
+		System.out.print("Qual a senha para conta: ");
+		String senha = ler.next();
 		System.out.print("Qual o limite inicial: ");
 		float limite = ler.nextFloat();
-		return new ContaCorrente(titular,identificador,limite);
+		return new ContaCorrente(titular,identificador,senha, limite);
 	}
 
 	public static ContaPoupanca cadastraContaPoupanca(){
@@ -21,13 +23,15 @@ public class Banco {
 		Random aleatorio = new Random();
 		System.out.print("Qual o nome do titular: ");
 		String titular = ler.next();
+		System.out.print("Qual a senha para conta: ");
+		String senha = ler.next();
 		String identificador = "b"+aleatorio.nextInt(10000);
 		System.out.print("Qual o deposito inicial: ");
 		float deposito = ler.nextFloat();
-		return new ContaPoupanca(titular,identificador,deposito);
+		return new ContaPoupanca(titular,identificador,senha, deposito);
 	}
 
-	public static ContaCorrente acessaContaCorente(ContaCorrente conta){
+	public static ContaCorrente acessaContaCorrente(ContaCorrente conta){
 		Scanner ler = new Scanner(System.in);
 		String resp;
 		do{
@@ -130,10 +134,13 @@ public class Banco {
 				case "ap"->{
 					System.out.print("Informe o identificador: ");
 					String identificador = ler.next();
+					System.out.print("Informe a senha: ");
+					String senha = ler.next();
 					//Pesquisando no vetor de contas...
 					int posicao = -1;
 					for(int i=0;i<icp;i++){
-						if(listaContaP[i].identificador.equals(identificador)){
+						if(listaContaP[i].identificador.equals(identificador)
+										&&listaContaP[i].senha.equals(senha)){
 							posicao = i;
 						}
 					}
@@ -147,15 +154,18 @@ public class Banco {
 				case "ac"->{
 					System.out.print("Informe o identificador: ");
 					String identificador = ler.next();
+					System.out.print("Informe a senha: ");
+					String senha = ler.next();
 					//Pesquisando no vetor de contas...
 					int posicao = -1;
 					for(int i=0;i<icc;i++){
-						if(listaContaC[i].identificador.equals(identificador)){
+						if(listaContaC[i].identificador.equals(identificador)
+										&&listaContaC[i].senha.equals(senha)){
 							posicao = i;
 						}
 					}
 					if(posicao >= 0){
-						listaContaC[posicao] = acessaContaCorente(listaContaC[posicao]);
+						listaContaC[posicao] = acessaContaCorrente(listaContaC[posicao]);
 					}
 					else{
 						System.out.println("Conta "+identificador+" não encontrada");
