@@ -1,6 +1,7 @@
 package aulaDez;
 
 public class ContaPoupanca {
+	static String nomeBanco;
 	String titular;
 	String identificador;
 	float saldo;
