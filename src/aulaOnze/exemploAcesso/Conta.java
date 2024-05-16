@@ -4,6 +4,7 @@ public class Conta {
 	public String titular;
 	public String identificador;
 	private float saldo;
+	static String nomeBanco;
 
 	public Conta(String titular, String identificador){
 		this.identificador = identificador;
