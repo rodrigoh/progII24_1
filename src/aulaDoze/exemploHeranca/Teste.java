@@ -12,5 +12,9 @@ public class Teste {
 		System.out.println("Seu registro de conselho é "+e1.getCrea());
 
 		System.out.println(e1);
+
+		ExemploQuatro eq1 = new ExemploQuatro("Ana","Silva");
+
+		System.out.println(eq1);
 	}
 }
