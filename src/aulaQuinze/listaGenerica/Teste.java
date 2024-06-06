@@ -2,7 +2,7 @@ package aulaQuinze.listaGenerica;
 
 public class Teste {
 	public static void main(String[] args) {
-		Lista l1 = new Lista(3);
+		Lista<String> l1 = new Lista<>(3);
 		System.out.println("O tamanho da lista é "+l1.obterTamanho());
 		System.out.println(l1);
 		l1.adiciona("A");
@@ -23,6 +23,9 @@ public class Teste {
 		System.out.println(l1);
 		l1.adiciona(4,"E");
 		System.out.println(l1);
+		l1.adiciona("D");
+		System.out.println("A posição do elemento D na lista é "+l1.posicaoDe("D"));
+		System.out.println("A última posição do elemento D na lista é "+l1.ultimaPosicaoDe("D"));
 
 	}
 }
