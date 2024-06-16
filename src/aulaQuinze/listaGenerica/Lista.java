@@ -155,6 +155,10 @@ public class Lista<T> {
 		remove(posicao);
 	}
 
+	public boolean estaVazia(){
+		return tamanho==0;
+	}
+
 	@Override
 	public String toString(){
 		//[1,2,3,4,5,6]
